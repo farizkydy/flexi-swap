@@ -11,7 +11,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let person of data">
+      <tr *ngFor="let person of data" (click)="goToDetail(person.url)">
         <td>{{ person.name }}</td>
         <td>{{ person.height }}</td>
         <td>{{ person.mass }}</td>

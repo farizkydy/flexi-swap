@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { PeopleRepository } from "../../../@core/repository/people.repository";
 import { Observable } from "rxjs";
-import { GetPeopleListResponse } from "../../../@core/domain/people.entity";
+import { GetPeopleList, GetPeopleListResponse } from "../../../@core/domain/people.entity";
 import { HttpClient } from "@angular/common/http";
 import { API_URL } from "../../api-url";
 
@@ -14,7 +14,11 @@ export class PeopleAdapter extends PeopleRepository {
     super();
   }
 
-   GetPeopleList(url: string): Observable<GetPeopleListResponse> {
+  GetPeopleList(url: string): Observable<GetPeopleListResponse> {
     return this.httpService.get<GetPeopleListResponse>(url);
+  }
+
+  GetPeopleById(id: string): Observable<GetPeopleList> {
+    return this.httpService.get<GetPeopleList>(`${API_URL}people/${id}`)
   }
 }
