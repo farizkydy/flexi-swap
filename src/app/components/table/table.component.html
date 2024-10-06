@@ -1,0 +1,23 @@
+<!-- src/app/components/table/table.component.html -->
+<div class="table-container" *ngIf="data.length">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Height (cm)</th>
+        <th>Mass (kg)</th>
+        <th>Gender</th>
+        <th>Birth Year</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let person of data">
+        <td>{{ person.name }}</td>
+        <td>{{ person.height }}</td>
+        <td>{{ person.mass }}</td>
+        <td>{{ person.gender }}</td>
+        <td>{{ person.birth_year }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
