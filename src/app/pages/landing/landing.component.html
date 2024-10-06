@@ -1,4 +1,9 @@
 <div class="landing-container">
   <h1>Star Wars Characters</h1>
   <app-table [data]="peopleList"></app-table>
+
+  <div class="pagination">
+    <button (click)="goToPage(prevPageUrl)" *ngIf="prevPageUrl" class="prev-btn">Previous</button>
+    <button (click)="goToPage(nextPageUrl)" *ngIf="nextPageUrl" class="next-btn">Next</button>
+  </div>  
 </div>

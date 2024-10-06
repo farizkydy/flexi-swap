@@ -14,7 +14,7 @@ export class PeopleAdapter extends PeopleRepository {
     super();
   }
 
-   GetPeopleList(): Observable<GetPeopleListResponse> {
-    return this.httpService.get<GetPeopleListResponse>(`${API_URL}/people`)
+   GetPeopleList(url: string): Observable<GetPeopleListResponse> {
+    return this.httpService.get<GetPeopleListResponse>(url);
   }
 }

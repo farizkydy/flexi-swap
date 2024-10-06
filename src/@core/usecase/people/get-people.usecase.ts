@@ -7,10 +7,10 @@ import { UseCase } from '../usecase';
 @Injectable({
   providedIn: 'root'
 })
-export class GetPeopleListUsecase implements UseCase<null, GetPeopleListResponse> {
+export class GetPeopleListUsecase implements UseCase<string, GetPeopleListResponse> {
   constructor(private peopleRepository: PeopleRepository) { }
 
-  execute(): Observable<GetPeopleListResponse> {
-    return this.peopleRepository.GetPeopleList();
+  execute(url: string): Observable<GetPeopleListResponse> {
+    return this.peopleRepository.GetPeopleList(url);
   }
 }
