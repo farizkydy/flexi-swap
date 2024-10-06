@@ -1,7 +1,7 @@
 export interface GetPeopleListResponse {
   count:    number;
   next:     string;
-  previous: null;
+  previous: string;
   results:  GetPeopleList[];
 }
 
@@ -19,8 +19,8 @@ export interface GetPeopleList {
   species:    string[];
   vehicles:   string[];
   starships:  string[];
-  created:    Date;
-  edited:     Date;
+  created:    string;
+  edited:     string;
   url:        string;
 }
 
