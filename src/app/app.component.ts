@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { GetPeopleListUsecase } from '../@core/usecase/people/get-people.usecase';
 
 @Component({
   selector: 'app-root',
@@ -9,16 +8,8 @@ import { GetPeopleListUsecase } from '../@core/usecase/people/get-people.usecase
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent implements OnInit{
+export class AppComponent {
   title = 'flexi-swap';
 
-  constructor(private getPeopleListUsecase: GetPeopleListUsecase) {
 
-  }
-
-  ngOnInit(): void {
-    this.getPeopleListUsecase.execute().subscribe((res) => {
-      console.log(res);
-    })
-  }
 }
